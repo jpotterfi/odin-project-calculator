@@ -27,21 +27,12 @@ body {
 
 .output{
     display: flex;
-    background-color: #373737;
-    justify-content: flex-end;
+    flex-direction: row-reverse;
     align-items: center;
+    background-color: #373737;
     flex: 2 1 100px;
     height: 100px;
-}
-
-.input{
-    display: flex;
-    background-color: #373737;
-    justify-content: flex-end;
-    align-items: center;
-    flex: 1.5 1 100px;
-    height: 100px;
-    padding-right: 15px;
+    padding-right: 10px;
 }
 
 button {
