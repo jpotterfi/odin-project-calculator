@@ -25,6 +25,13 @@ body {
     font-size: 30px;
 }
 
+#clear {
+    width: 205px;
+}
+
+#backspace{
+    width: 205px;
+}
 .output{
     display: flex;
     flex-direction: row-reverse;
@@ -44,7 +51,7 @@ button {
     font-weight: 700;
 }
 
-.equals {
+#equals {
     background-color: #ebebeb;
     color: #373737;;
 }
@@ -81,12 +88,12 @@ button:active {
     transform: scale(0.99);
 }
 
-.equals:hover,
-.equals:focus {
+#equals:hover,
+#equals:focus {
     background: rgb(255, 255, 255);
 }
 
-.equals:focus {
+#equals:focus {
     outline: 1px solid #373737;
     outline-offset: -4px;
 }
