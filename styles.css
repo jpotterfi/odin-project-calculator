@@ -18,19 +18,20 @@ body {
     height: auto;
     /*min-width: 412px;
     min-height: 100px; */
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
+    
     display: flex;
     flex-direction: row;
     font-size: 30px;
 }
 
 #clear {
-    width: 205px;
+    width: 204px;
+    height: 50px;
 }
 
 #backspace{
-    width: 205px;
+    width: 204px;
+    height: 50px;
 }
 .output{
     display: flex;
@@ -38,8 +39,13 @@ body {
     align-items: center;
     background-color: #373737;
     flex: 2 1 100px;
-    height: 100px;
+    height: 150px;
     padding-right: 10px;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    font-size: 35px;
+    font-weight: 500;
+    color: #ffffff;
 }
 
 button {
@@ -49,6 +55,14 @@ button {
     color: #E0E0E0;
     font-size: 20px;
     font-weight: 700;
+}
+
+#zero {
+    border-bottom-left-radius: 16px;
+}
+
+#plus {
+    border-bottom-right-radius: 16px;
 }
 
 #equals {
