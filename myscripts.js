@@ -8,6 +8,7 @@ let seven = document.getElementById("seven");
 let eight = document.getElementById("eight");
 let nine = document.getElementById("nine");
 let zero = document.getElementById("zero");
+let decimal = document.getElementById("decimal");
 
 let divide = document.getElementById("divide");
 let times = document.getElementById("times");
@@ -29,10 +30,33 @@ let isOperationClicked = false;
 let isError = false;
 
 
+decimal.addEventListener("click", function(){
+    if (isError == true) {
+        return
+    } else if (operation == "equals"){
+    value = "";
+    operation = "";
+    isFirstStoredVal = false;
+    } else if (outputNum.textContent == firstStoredVal){
+    value = "";
+    } //resets input field if already a stored value
+    if (value.includes(".")) {
+    return    
+    }
+    value = value + ".";
+    outputNum.textContent = value;
+    isOperationClicked = false;
+    console.log({isOperationClicked});
+});
+
 zero.addEventListener("click", function(){
     if (isError == true) {
         return
-    }  else if (outputNum.textContent == firstStoredVal){
+    } else if (operation == "equals" && outputNum.textContent != "."){
+    value = "";
+    operation = "";
+    isFirstStoredVal = false;
+    } else if (outputNum.textContent == firstStoredVal){
     value = "";
     } //resets input field if already a stored value
     value = value + "0";
@@ -43,8 +67,12 @@ zero.addEventListener("click", function(){
 one.addEventListener("click", function(){
     if (isError == true) {
         return
-    }  else if (outputNum.textContent == firstStoredVal){
-    value = "";
+    } else if (operation == "equals" && outputNum.textContent != "."){
+        value = "";
+        operation = "";
+        isFirstStoredVal = false;
+    } else if (outputNum.textContent == firstStoredVal){
+        value = "";
     } //resets input field if already a stored value
     value = value + "1";
     outputNum.textContent = value;
@@ -54,8 +82,12 @@ one.addEventListener("click", function(){
 two.addEventListener("click", function(){
     if (isError == true) {
         return
-    }  else if (outputNum.textContent == firstStoredVal){
-    value = "";
+    } else if (operation == "equals" && outputNum.textContent != "."){
+        value = "";
+        operation = "";
+        isFirstStoredVal = false;
+    } else if (outputNum.textContent == firstStoredVal){
+        value = "";
     } //resets input field if already a stored value
     value = value + "2";
     outputNum.textContent = value;
@@ -65,8 +97,12 @@ two.addEventListener("click", function(){
 three.addEventListener("click", function(){
     if (isError == true) {
         return
-    }  else if (outputNum.textContent == firstStoredVal){
-    value = "";
+    } else if (operation == "equals" && outputNum.textContent != "."){
+        value = "";
+        operation = "";
+        isFirstStoredVal = false;
+    } else if (outputNum.textContent == firstStoredVal){
+        value = "";
     } //resets input field if already a stored value
     value = value + "3";
     outputNum.textContent = value;
@@ -76,8 +112,12 @@ three.addEventListener("click", function(){
 four.addEventListener("click", function(){
     if (isError == true) {
         return
-    }  else if (outputNum.textContent == firstStoredVal){
-    value = "";
+    } else if (operation == "equals" && outputNum.textContent != "."){
+        value = "";
+        operation = "";
+        isFirstStoredVal = false;
+    } else if (outputNum.textContent == firstStoredVal){
+        value = "";
     } //resets input field if already a stored value
     value = value + "4";
     outputNum.textContent = value;
@@ -87,8 +127,12 @@ four.addEventListener("click", function(){
 five.addEventListener("click", function(){
     if (isError == true) {
         return
-    }  else if (outputNum.textContent == firstStoredVal){
-    value = "";
+    } else if (operation == "equals" && outputNum.textContent != "."){
+        value = "";
+        operation = "";
+        isFirstStoredVal = false;
+    } else if (outputNum.textContent == firstStoredVal){
+        value = "";
     } //resets input field if already a stored value
     value = value + "5";
     outputNum.textContent = value;
@@ -98,8 +142,12 @@ five.addEventListener("click", function(){
 six.addEventListener("click", function(){
     if (isError == true) {
         return
-    }  else if (outputNum.textContent == firstStoredVal){
-    value = "";
+    } else if (operation == "equals" && outputNum.textContent != "."){
+        value = "";
+        operation = "";
+        isFirstStoredVal = false;
+    } else if (outputNum.textContent == firstStoredVal){
+        value = "";
     } //resets input field if already a stored value
     value = value + "6";
     outputNum.textContent = value;
@@ -109,8 +157,12 @@ six.addEventListener("click", function(){
 seven.addEventListener("click", function(){
     if (isError == true) {
         return
-    }  else if (outputNum.textContent == firstStoredVal){
-    value = "";
+    } else if (operation == "equals" && outputNum.textContent != "."){
+        value = "";
+        operation = "";
+        isFirstStoredVal = false;
+    } else if (outputNum.textContent == firstStoredVal){
+        value = "";
     } //resets input field if already a stored value
     value = value + "7";
     outputNum.textContent = value;
@@ -120,8 +172,12 @@ seven.addEventListener("click", function(){
 eight.addEventListener("click", function(){
     if (isError == true) {
         return
-    }  else if (outputNum.textContent == firstStoredVal){
-    value = "";
+    } else if (operation == "equals" && outputNum.textContent != "."){
+        value = "";
+        operation = "";
+        isFirstStoredVal = false;
+    } else if (outputNum.textContent == firstStoredVal){
+        value = "";
     } //resets input field if already a stored value
     value = value + "8";
     outputNum.textContent = value;
@@ -131,8 +187,12 @@ eight.addEventListener("click", function(){
 nine.addEventListener("click", function(){
     if (isError == true) {
         return
-    }  else if (outputNum.textContent == firstStoredVal){
-    value = "";
+    } else if (operation == "equals" && outputNum.textContent != "."){
+        value = "";
+        operation = "";
+        isFirstStoredVal = false;
+    } else if (outputNum.textContent == firstStoredVal){
+        value = "";
     } //resets input field if already a stored value
     value = value + "9";
     outputNum.textContent = value;
@@ -143,7 +203,9 @@ nine.addEventListener("click", function(){
 plus.addEventListener("click", function(){
     if (isError == true) {
         return
-    }  else if (operation == "minus") {
+    } else if (outputNum.textContent == ".") {
+        return
+    } else if (operation == "minus") {
     minusFunction();
     } else if (operation == "times"){
     timesFunction();
@@ -164,7 +226,10 @@ function plusFunction() {
         console.log("FirstStoredVal and isOperationClicked are true")
         return;   
     } else if (isFirstStoredVal == true){ //if there is a first stored value
-        secondStoredVal = parseInt(value) //make a second value with the current value
+            if (outputNum.textContent == ".") {
+                return
+            }
+        secondStoredVal = parseFloat(value) //make a second value with the current value
         console.log("secondStoredVal is" + secondStoredVal);
 
         firstStoredVal = firstStoredVal + secondStoredVal;
@@ -173,7 +238,7 @@ function plusFunction() {
         secondStoredVal = 0;
 
     } else if (isFirstStoredVal == false){ //checks if there is the first stored value
-        firstStoredVal = parseInt(value); //converts string into integer and stores it
+        firstStoredVal = parseFloat(value); //converts string into integer and stores it
         isFirstStoredVal = true; //changes boolean value to reflect a value has been stored
         console.log("firstStoredVal is" + firstStoredVal);
     }
@@ -181,10 +246,26 @@ function plusFunction() {
 }
 
 minus.addEventListener("click", function(){
-
+    console.log("minus event" + operation + " " + outputNum.textContent);
         if (isError == true) {
+        return 
+        } else if (outputNum.textContent == ".") {
+            return    
+        } else if (operation != "equals" && (outputNum.textContent == "" || outputNum.textContent == "-")) {
+        console.log("this happened");
+        value = "-";
+        outputNum.textContent = value;
+        return    
+        /* }  else if (operation == "equals" && outputNum.textContent != "."){
+            value = "-";
+            outputNum.textContent = value;
+            isFirstStoredVal = false;
+        return */
+        } else if (operation != "equals" && outputNum.textContent == firstStoredVal) {
+        value = "-";
+        outputNum.textContent = value;
         return
-        }  else if (operation == "plus") {
+        } else if (operation == "plus") {
         plusFunction();
         } else if (operation == "times"){
         timesFunction();
@@ -205,7 +286,10 @@ function minusFunction() {
         console.log("FirstStoredVal and isOperationClicked are true")
         return;   
     } else if (isFirstStoredVal == true){ //if there is a first stored value
-        secondStoredVal = parseInt(value) //make a second value with the current value
+        if (outputNum.textContent == ".") {
+            return
+        }
+        secondStoredVal = parseFloat(value) //make a second value with the current value
         console.log("secondStoredVal is" + secondStoredVal);
 
         firstStoredVal = firstStoredVal - secondStoredVal;
@@ -214,7 +298,7 @@ function minusFunction() {
         secondStoredVal = 0;
 
     } else if (isFirstStoredVal == false){ //checks if there is the first stored value
-        firstStoredVal = parseInt(value); //converts string into integer and stores it
+        firstStoredVal = parseFloat(value); //converts string into integer and stores it
         isFirstStoredVal = true; //changes boolean value to reflect a value has been stored
         console.log("firstStoredVal is" + firstStoredVal);
     }
@@ -223,6 +307,8 @@ function minusFunction() {
 
 times.addEventListener("click", function(){
     if (isError == true) {
+        return
+    } else if (outputNum.textContent == ".") {
         return
     } else if (operation == "minus") {
     minusFunction();
@@ -245,7 +331,10 @@ function timesFunction() {
         console.log("FirstStoredVal and isOperationClicked are true")
         return;   
     } else if (isFirstStoredVal == true){ //if there is a first stored value
-        secondStoredVal = parseInt(value) //make a second value with the current value
+        if (outputNum.textContent == ".") {
+            return
+        }
+        secondStoredVal = parseFloat(value) //make a second value with the current value
         console.log("secondStoredVal is" + secondStoredVal);
 
         firstStoredVal = firstStoredVal * secondStoredVal;
@@ -254,7 +343,7 @@ function timesFunction() {
         secondStoredVal = 0;
 
     } else if (isFirstStoredVal == false){ //checks if there is the first stored value
-        firstStoredVal = parseInt(value); //converts string into integer and stores it
+        firstStoredVal = parseFloat(value); //converts string into integer and stores it
         isFirstStoredVal = true; //changes boolean value to reflect a value has been stored
         console.log("firstStoredVal is" + firstStoredVal);
     }
@@ -263,6 +352,8 @@ function timesFunction() {
 
 divide.addEventListener("click", function(){
     if (isError == true) {
+        return
+    } else if (outputNum.textContent == ".") {
         return
     }  else if (operation == "minus") {
     minusFunction();
@@ -285,7 +376,10 @@ function divideFunction() {
         console.log("FirstStoredVal and isOperationClicked are true")
         return;   
     } else if (isFirstStoredVal == true){ //if there is a first stored value
-        secondStoredVal = parseInt(value) //make a second value with the current value
+        if (outputNum.textContent == ".") {
+            return
+        }
+        secondStoredVal = parseFloat(value) //make a second value with the current value
             if (secondStoredVal == 0) {
                 outputNum.textContent = "error: can't divide by zero";
                 isError = true;
@@ -299,9 +393,54 @@ function divideFunction() {
         secondStoredVal = 0;
 
     } else if (isFirstStoredVal == false){ //checks if there is the first stored value
-        firstStoredVal = parseInt(value); //converts string into integer and stores it
+        firstStoredVal = parseFloat(value); //converts string into integer and stores it
         isFirstStoredVal = true; //changes boolean value to reflect a value has been stored
         console.log("firstStoredVal is" + firstStoredVal);
     }
     //outputNum.textContent = ""; //resets output field to blank
 }
+
+clear.addEventListener("click", function(){
+    isFirstStoredVal = false;
+    isSecondStoredVal = false;
+    operation = "";
+    isOperationClicked = false;
+    isError = false;
+    value = "";
+    firstStoredVal = 0;
+    secondStoredVal = 0;
+    outputNum.textContent = value;
+})
+
+backspace.addEventListener("click", function(){
+    console.log("length" + value.length)
+    value = outputNum.textContent;
+    console.log("pre-backspace value is" + value);
+    //if (outputNum.textContent == firstStoredVal) {
+    //value = firstStoredVal.toString;
+    //}
+    value = value.slice(0, value.length - 1);
+    console.log("post-backspace value is" + value);
+   // value.removeCharAt(value.length);
+    outputNum.textContent = value;
+    isFirstStoredVal = false;
+    //firstStoredVal = value;
+})
+
+equals.addEventListener("click", function(){
+    if (isError == true) {
+        return
+    }  else if (operation == "minus") {
+    minusFunction();
+    } else if (operation == "times"){
+    timesFunction();
+    } else if (operation == "divide"){
+    divideFunction();    
+    } else if (operation == "plus") {
+    plusFunction();
+    }
+    operation = "equals";
+    console.log(operation);
+    isOperationClicked = true;
+    //isSecondStoredVal = false;
+})
