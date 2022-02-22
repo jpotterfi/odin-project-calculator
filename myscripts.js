@@ -444,3 +444,288 @@ equals.addEventListener("click", function(){
     isOperationClicked = true;
     //isSecondStoredVal = false;
 })
+
+////////////////////////////keyboard listener
+
+window.addEventListener('keydown', function(e) {
+    if (e.key === "0") {
+        if (isError == true) {
+            return
+        } else if (operation == "equals" && outputNum.textContent != "."){
+        value = "";
+        operation = "";
+        isFirstStoredVal = false;
+        } else if (outputNum.textContent == firstStoredVal){
+        value = "";
+        } //resets input field if already a stored value
+        value = value + "0";
+        outputNum.textContent = value;
+        isOperationClicked = false;
+        console.log({isOperationClicked});
+    } else if (e.key === "1") {
+        if (isError == true) {
+            return
+        } else if (operation == "equals" && outputNum.textContent != "."){
+            value = "";
+            operation = "";
+            isFirstStoredVal = false;
+        } else if (outputNum.textContent == firstStoredVal){
+            value = "";
+        } //resets input field if already a stored value
+        value = value + "1";
+        outputNum.textContent = value;
+        isOperationClicked = false;
+        console.log({isOperationClicked});
+    } else if (e.key === "2") {
+        if (isError == true) {
+            return
+        } else if (operation == "equals" && outputNum.textContent != "."){
+            value = "";
+            operation = "";
+            isFirstStoredVal = false;
+        } else if (outputNum.textContent == firstStoredVal){
+            value = "";
+        } //resets input field if already a stored value
+        value = value + "2";
+        outputNum.textContent = value;
+        isOperationClicked = false;
+        console.log({isOperationClicked});
+    } else if (e.key === "3") {
+        if (isError == true) {
+            return
+        } else if (operation == "equals" && outputNum.textContent != "."){
+            value = "";
+            operation = "";
+            isFirstStoredVal = false;
+        } else if (outputNum.textContent == firstStoredVal){
+            value = "";
+        } //resets input field if already a stored value
+        value = value + "3";
+        outputNum.textContent = value;
+        isOperationClicked = false;
+        console.log({isOperationClicked});
+    } else if (e.key === "4") {
+        if (isError == true) {
+            return
+        } else if (operation == "equals" && outputNum.textContent != "."){
+            value = "";
+            operation = "";
+            isFirstStoredVal = false;
+        } else if (outputNum.textContent == firstStoredVal){
+            value = "";
+        } //resets input field if already a stored value
+        value = value + "4";
+        outputNum.textContent = value;
+        isOperationClicked = false;
+        console.log({isOperationClicked});
+    } else if (e.key === "5") {
+        if (isError == true) {
+            return
+        } else if (operation == "equals" && outputNum.textContent != "."){
+            value = "";
+            operation = "";
+            isFirstStoredVal = false;
+        } else if (outputNum.textContent == firstStoredVal){
+            value = "";
+        } //resets input field if already a stored value
+        value = value + "5";
+        outputNum.textContent = value;
+        isOperationClicked = false;
+        console.log({isOperationClicked});
+    } else if (e.key === "6") {
+        if (isError == true) {
+            return
+        } else if (operation == "equals" && outputNum.textContent != "."){
+            value = "";
+            operation = "";
+            isFirstStoredVal = false;
+        } else if (outputNum.textContent == firstStoredVal){
+            value = "";
+        } //resets input field if already a stored value
+        value = value + "6";
+        outputNum.textContent = value;
+        isOperationClicked = false;
+        console.log({isOperationClicked});
+    } else if (e.key === "7") {
+        if (isError == true) {
+            return
+        } else if (operation == "equals" && outputNum.textContent != "."){
+            value = "";
+            operation = "";
+            isFirstStoredVal = false;
+        } else if (outputNum.textContent == firstStoredVal){
+            value = "";
+        } //resets input field if already a stored value
+        value = value + "7";
+        outputNum.textContent = value;
+        isOperationClicked = false;
+        console.log({isOperationClicked});
+    } else if (e.key === "8") {
+        if (isError == true) {
+            return
+        } else if (operation == "equals" && outputNum.textContent != "."){
+            value = "";
+            operation = "";
+            isFirstStoredVal = false;
+        } else if (outputNum.textContent == firstStoredVal){
+            value = "";
+        } //resets input field if already a stored value
+        value = value + "8";
+        outputNum.textContent = value;
+        isOperationClicked = false;
+        console.log({isOperationClicked});
+    } else if (e.key === "9") {
+        if (isError == true) {
+            return
+        } else if (operation == "equals" && outputNum.textContent != "."){
+            value = "";
+            operation = "";
+            isFirstStoredVal = false;
+        } else if (outputNum.textContent == firstStoredVal){
+            value = "";
+        } //resets input field if already a stored value
+        value = value + "9";
+        outputNum.textContent = value;
+        isOperationClicked = false;
+        console.log({isOperationClicked});
+    } else if (e.key === ".") {
+        if (isError == true) {
+            return
+        } else if (operation == "equals"){
+        value = "";
+        operation = "";
+        isFirstStoredVal = false;
+        } else if (outputNum.textContent == firstStoredVal){
+        value = "";
+        } //resets input field if already a stored value
+        if (value.includes(".")) {
+        return    
+        }
+        value = value + ".";
+        outputNum.textContent = value;
+        isOperationClicked = false;
+        console.log({isOperationClicked});
+    } else if (e.key === "Backspace") {
+        console.log("length" + value.length)
+        value = outputNum.textContent;
+        console.log("pre-backspace value is" + value);
+        //if (outputNum.textContent == firstStoredVal) {
+        //value = firstStoredVal.toString;
+        //}
+        value = value.slice(0, value.length - 1);
+        console.log("post-backspace value is" + value);
+    // value.removeCharAt(value.length);
+        outputNum.textContent = value;
+        isFirstStoredVal = false;
+        //firstStoredVal = value;
+    } else if (e.key === "=" || e.key === "Enter") {
+        if (isError == true) {
+            return
+        }  else if (operation == "minus") {
+        minusFunction();
+        } else if (operation == "times"){
+        timesFunction();
+        } else if (operation == "divide"){
+        divideFunction();    
+        } else if (operation == "plus") {
+        plusFunction();
+        }
+        operation = "equals";
+        console.log(operation);
+        isOperationClicked = true;
+        //isSecondStoredVal = false;
+    } else if (e.key === "+") {
+        if (isError == true) {
+            return
+        } else if (outputNum.textContent == ".") {
+            return
+        } else if (operation == "minus") {
+        minusFunction();
+        } else if (operation == "times"){
+        timesFunction();
+        } else if (operation == "divide"){
+        divideFunction();    
+        } else {
+        plusFunction();
+        }
+        operation = "plus";
+        console.log(operation);
+        isOperationClicked = true;
+    } else if (e.key === "-") {
+        console.log("minus event" + operation + " " + outputNum.textContent);
+        if (isError == true) {
+        return 
+        } else if (outputNum.textContent == ".") {
+            return    
+        } else if (operation != "equals" && (outputNum.textContent == "" || outputNum.textContent == "-")) {
+        console.log("this happened");
+        value = "-";
+        outputNum.textContent = value;
+        return    
+        /* }  else if (operation == "equals" && outputNum.textContent != "."){
+            value = "-";
+            outputNum.textContent = value;
+            isFirstStoredVal = false;
+        return */
+        } else if (operation != "equals" && outputNum.textContent == firstStoredVal) {
+        value = "-";
+        outputNum.textContent = value;
+        return
+        } else if (operation == "plus") {
+        plusFunction();
+        } else if (operation == "times"){
+        timesFunction();
+        } else if (operation == "divide"){
+        divideFunction();
+        } else {
+        minusFunction();    
+        }
+        operation = "minus";
+        console.log(operation);
+        isOperationClicked = true;
+    } else if (e.key === "/") {
+        if (isError == true) {
+            return
+        } else if (outputNum.textContent == ".") {
+            return
+        }  else if (operation == "minus") {
+        minusFunction();
+        } else if (operation == "plus") {
+        plusFunction();    
+        } else if (operation == "times") {
+        timesFunction();
+        } else {
+        divideFunction();    
+        }
+        operation = "divide";
+        console.log(operation);
+        isOperationClicked = true;
+    } else if (e.key === "*") {
+        if (isError == true) {
+            return
+        } else if (outputNum.textContent == ".") {
+            return
+        } else if (operation == "minus") {
+        minusFunction();
+        } else if (operation == "plus") {
+        plusFunction();    
+        } else if (operation == "divide") {
+        divideFunction();    
+        } else {
+        timesFunction();    
+        }
+        operation = "times";
+        console.log(operation);
+        isOperationClicked = true;
+    } else if (e.key === "Escape") {
+        isFirstStoredVal = false;
+    isSecondStoredVal = false;
+    operation = "";
+    isOperationClicked = false;
+    isError = false;
+    value = "";
+    firstStoredVal = 0;
+    secondStoredVal = 0;
+    outputNum.textContent = value;
+    }
+})
